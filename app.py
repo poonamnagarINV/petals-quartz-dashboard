@@ -14,7 +14,7 @@ view = st.sidebar.radio("Go to", ["Inventory", "Sales", "Market Overview"])
 
 if view == "Inventory":
     st.header("📦 Stock Inventory")
-    stock_df["Low Stock"] = stock_df["Qty"].apply(lambda x: "⚠️" if x < 3 else "")
+    stock_df["Low Stock"] = stock_df["Quantity"].apply(lambda x: "⚠️" if x < 3 else "")
     st.dataframe(stock_df)
 
     low_stock = stock_df[stock_df["Qty"] < 3]
